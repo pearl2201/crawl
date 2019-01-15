@@ -19,5 +19,6 @@ class LenaSpider(scrapy.Spider):
                 r = requests.get(url)
                 with open(os.path.join(self.folder_path,name),'wb') as f:
                     f.write(r.content)
+                    r.close()
             yield {'name':name,'url':url}
         
