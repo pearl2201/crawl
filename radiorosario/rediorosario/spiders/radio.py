@@ -21,7 +21,6 @@ class RadioSpider(scrapy.Spider):
                 next_page = response.urljoin(url)
 
                 if self.check_is_file(url):
-                    
                     folder_path = unquote(response.url[37:])
                     file_path = os.path.join(folder_path,name)
                     #self.download_file(folder_path,file_path,next_page, name)
